@@ -548,6 +548,7 @@ cat  "${KUBECONFIG}"
 #"${demo_dir}/kubectl" get pods
 
 "${demo_dir}/kubectl" cluster info
+curl  -L https://127.0.0.1:34395
 
 echo "CHRIS"
 
