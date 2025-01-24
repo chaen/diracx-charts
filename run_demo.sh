@@ -540,6 +540,10 @@ if [ ${offline_mode} -eq 0 ]; then
   sed -E 's/^data: null/data:\n  strict-validate-path-type: "false"/g'  "${tmp_dir}/kind-ingress-deploy.yaml" > "${demo_dir}/kind-ingress-deploy.yaml"
 fi
 
+"${demo_dir}/kubectl" get pods
+
+"${demo_dir}/kubectl" cluster info
+
 "${demo_dir}/kubectl" apply -f "${demo_dir}/kind-ingress-deploy.yaml"
 printf "%b Waiting for ingress controller to be created...\n" ${UNICORN_EMOJI}
 "${demo_dir}/kubectl" wait --namespace ingress-nginx \
