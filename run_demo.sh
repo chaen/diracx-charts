@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 IFS=$'\n\t'
+set -x
 
 UNICORN_EMOJI='\xF0\x9F\xA6\x84'
 SKULL_EMOJI='\xF0\x9F\x92\x80'
