@@ -546,7 +546,7 @@ echo "${KUBECONFIG}"
 cat  "${KUBECONFIG}"
 
 #"${demo_dir}/kubectl" get pods
-curl  -L "$(grep server /tmp/kube.conf  | awk '{print $NF}')"
+curl  -L "$(grep server ${KUBECONFIG}  | awk '{print $NF}')"
 
 "${demo_dir}/kubectl" cluster-info
 
