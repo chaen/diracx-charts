@@ -2,12 +2,12 @@ global:
   storageClassName: longhorn
 
 diracx:
-  hostname: <your_hostname>
+  hostname: 172.18.0.1.nip.io
   service:
     port: 8000
   settings:
-    DIRACX_SERVICE_AUTH_TOKEN_ISSUER: "https://<your_hostname>"
-    DIRACX_SERVICE_AUTH_ALLOWED_REDIRECTS: '["https://<your_hostname>/api/docs/oauth2-redirect","https://<your_hostname>/#authentication-callback"]'
+    DIRACX_SERVICE_AUTH_TOKEN_ISSUER: "https://172.18.0.1.nip.io"
+    DIRACX_SERVICE_AUTH_ALLOWED_REDIRECTS: '["https://172.18.0.1.nip.io/api/docs/oauth2-redirect","https://172.18.0.1.nip.io/#authentication-callback"]'
     DIRACX_SANDBOX_STORE_BUCKET_NAME: demo-sandboxes
     DIRACX_SANDBOX_STORE_S3_CLIENT_KWARGS: '{"endpoint_url": "http://diracx-minio:9000", "aws_access_key_id": "console", "aws_secret_access_key": "console123"}'
     DIRACX_SANDBOX_STORE_AUTO_CREATE_BUCKET: "true"
@@ -33,15 +33,15 @@ ingress:
 
 dex:
   config:
-    issuer: http://<your_hostname>:32002
+    issuer: http://172.18.0.1.nip.io:32002
 
     staticClients:
     - id: d396912e-2f04-439b-8ae7-d8c585a34790
       public: true
       name: 'CLI app'
       redirectURIs:
-        - 'https://<your_hostname>/api/auth/device/complete'
-        - 'https://<your_hostname>/api/auth/authorize/complete'
+        - 'https://172.18.0.1.nip.io/api/auth/device/complete'
+        - 'https://172.18.0.1.nip.io/api/auth/authorize/complete'
 
     staticPasswords:
       - email: "admin@example.com"
